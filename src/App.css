@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+
+form {
+  padding: 10px;
+  margin: 10px;
+  display: inline-flex;
+}
