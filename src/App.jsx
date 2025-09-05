@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import './App.css'
 import Contact from './components/contact'
 import Education from './components/education'
 

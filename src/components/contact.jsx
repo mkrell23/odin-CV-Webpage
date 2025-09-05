@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/contact.css'
 
 export default function Contact(){
     const blankContact = {name:"", email:"", phone:""}
