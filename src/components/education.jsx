@@ -18,6 +18,9 @@ export default function Education(){
 
 //value="2008-12-21"
 
+// TO-DO: Add variable to hold education history
+// TO-DO: Display education history
+
     return(
         <>
         <form  onSubmit={ onSubmit }>
