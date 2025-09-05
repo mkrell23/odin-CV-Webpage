@@ -4,11 +4,11 @@ export default function Contact(){
     const blankContact = {name:"", email:"", phone:""}
     const [ contacts, setContacts ] = useState([])
     const [ currentContact, setCurrentContact ] = useState(blankContact)
-
+    // TO-DO: We probably only want one main contact for this page. Refactor to only have one instead of array.
+    // Idea: transform input field to table and vice/versa on save/edit
 
     function editForm(e){
         const currentContact = e.target.parentElement.parentElement.attributes.contact.value
-        // console.log(contacts[currentContact])
         setContacts(contacts.filter( (contact, i) => {
             if (i != currentContact){
                 return contact
