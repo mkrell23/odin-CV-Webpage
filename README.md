@@ -7,6 +7,6 @@ The user will be able to enter and edit in details from their career and educati
     * ~~Contact~~
     * Education
     * Work History
-* Add ability to edit entries
+* ~~Add ability to edit entries~~
 * General CSS Styling needed
 * Find hosting
