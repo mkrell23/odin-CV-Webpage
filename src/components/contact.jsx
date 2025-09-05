@@ -7,15 +7,15 @@ export default function Contact(){
 
 
     function editForm(e){
-        console.log(e.target)
-        console.log(e.currentTarget)
-        console.log(e)
+        const currentContact = e.target.parentElement.parentElement.attributes.contact.value
+        // console.log(contacts[currentContact])
+        setCurrentContact(contacts[currentContact])
     }
 
     function displayContacts(){
         return contacts.map( (contact, i) => {
             return ( 
-                <tr key={i}>
+                <tr key={i} contact={i}>
                     <td>{contact.name}</td>
                     <td>{contact.email}</td>
                     <td>{contact.phone}</td>
