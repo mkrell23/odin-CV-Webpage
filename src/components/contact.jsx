@@ -1,16 +1,10 @@
 import { useState } from 'react'
 
 export default function Contact(){
+    const blankContact = {name:"", email:"", phone:""}
     const [ contacts, setContacts ] = useState([])
-    const [ currentContact, setCurrentContact ] = useState({name:"", email:"", phone:""})
+    const [ currentContact, setCurrentContact ] = useState(blankContact)
 
-    function saveForm(formData){
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const phone = formData.get("telephone");
-        const newContact = { name, email, phone }
-        setContacts( [ ...contacts, newContact]);
-    }
 
     function editForm(e){
         console.log(e.target)
@@ -31,17 +25,16 @@ export default function Contact(){
         })
     }
 
-    function saveFormBtn(e){
-        e.stopPropagation()
-        console.log(currentContact)
-    }
-
-    // console.log(contacts);
     const contactsTable = displayContacts()
 
     return (
         <>
-        <form action={saveForm}>
+        <form onSubmit={ e => {
+                e.preventDefault(); 
+                e.stopPropagation(); 
+                setContacts( [ ...contacts, currentContact]);
+                setCurrentContact(blankContact);
+                }}>
             <h3>Contact Details</h3>
             <label>
                 Name: {' '}
@@ -64,7 +57,7 @@ export default function Contact(){
                     onChange={(e) => setCurrentContact( {...currentContact, phone: e.target.value})}
                 />
             </label>{' '}
-            <button onClick={saveFormBtn}>Save</button>
+            <button>Save</button>
         </form>
         <div>
             <table>
