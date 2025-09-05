@@ -9,6 +9,11 @@ export default function Contact(){
     function editForm(e){
         const currentContact = e.target.parentElement.parentElement.attributes.contact.value
         // console.log(contacts[currentContact])
+        setContacts(contacts.filter( (contact, i) => {
+            if (i != currentContact){
+                return contact
+            }
+        }))
         setCurrentContact(contacts[currentContact])
     }
 
