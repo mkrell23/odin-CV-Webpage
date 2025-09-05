@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import Contact from './components/contact'
+import Education from './components/education'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -7,6 +8,8 @@ function App() {
   return (
     <>
       <Contact />
+      <hr />
+      <Education />
     </>
   )
 }
