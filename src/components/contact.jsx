@@ -31,16 +31,20 @@ export default function Contact(){
         })
     }
 
+    function onSubmit(e){
+        e.preventDefault(); 
+        e.stopPropagation(); 
+        setContacts( [ ...contacts, currentContact]);
+        setCurrentContact(blankContact);
+    }
+
     const contactsTable = displayContacts()
+
+
 
     return (
         <>
-        <form onSubmit={ e => {
-                e.preventDefault(); 
-                e.stopPropagation(); 
-                setContacts( [ ...contacts, currentContact]);
-                setCurrentContact(blankContact);
-                }}>
+        <form onSubmit={ onSubmit }>
             <h3>Contact Details</h3>
             <label>
                 Name: {' '}
