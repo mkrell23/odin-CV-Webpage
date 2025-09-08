@@ -60,17 +60,17 @@ export default function Education(){
                 />
             </label>{' '}
             <label>
-                Date Received: {' '}
-                <input type="date" name="recievedDate"
-                    value={recievedDate}
-                    onChange={ e => setRecievedDate(e.target.value)}
-                />
-            </label>{' '}
-            <label>
                 Degree or Certificate Attained: {' '}
                 <input type="text" name="degree"
                     value={degree}
                     onChange={ e => setDegree(e.target.value)}
+                />
+            </label>{' '}
+            <label>
+                Date Received: {' '}
+                <input type="date" name="recievedDate"
+                    value={recievedDate}
+                    onChange={ e => setRecievedDate(e.target.value)}
                 />
             </label>{' '}
             <button>Save</button>
