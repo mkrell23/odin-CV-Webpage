@@ -1,8 +1,8 @@
 # CV Webpage from The Odin Project
 
-The user will be able to enter and edit in details from their career and education and see them displayed live on the web, using React.
+Enter and edit in details from your career and education and see them displayed on the web, using React.
 
-See it live: [Click here to See!](https://odin-cv-webpage.pages.dev/)
+Do it live: [Click here to See!](https://odin-cv-webpage.pages.dev/)
 
 ## To-Do:
 * Items should display all together in a more pleasing resume format
