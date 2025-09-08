@@ -10,3 +10,4 @@ See it live: [Click here to See!](https://odin-cv-webpage.pages.dev/)
 * Saving/exporting as PDF
 * Add ability to reorder items
 * General CSS Styling needed
+* Make tables responsive
