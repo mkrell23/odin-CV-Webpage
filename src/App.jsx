@@ -9,6 +9,7 @@ function App() {
 
   return (
     <>
+    <h2>Resume Builder</h2>
     <hr />
       <Contact />
       <hr />

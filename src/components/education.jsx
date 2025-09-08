@@ -51,7 +51,7 @@ export default function Education(){
     return(
         <>
         <form  onSubmit={ onSubmit }>
-            <h3>Education</h3>
+            <h4 className='formTitle'>Education</h4>
             <label>
                 School Attended: {' '}
                 <input type="text" name="school" 

@@ -14,7 +14,7 @@ form button{
   align-self: stretch;
 }
 
-h3{
+.formTitle{
   align-self: flex-end;
 }
 

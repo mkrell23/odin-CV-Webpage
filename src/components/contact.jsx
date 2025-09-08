@@ -51,8 +51,8 @@ export default function Contact(){
     function displayForm(){
         return (
             <>
-            <h3>Contact Details</h3>
             <form onSubmit={ onSubmit }>
+            <h4 className='formTitle'>Contact Details</h4>
                 <label>
                     Name: {' '}
                     <input type="text" name="name" 
