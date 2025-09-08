@@ -10,6 +10,10 @@ form {
   margin: 10px;
 }
 
+form button{
+  align-self: stretch;
+}
+
 h3{
   align-self: flex-end;
 }
@@ -26,6 +30,11 @@ td{
   padding: 10px;
 }
 
+table {
+  margin:auto
+}
+  
+
 @media (min-width: 1000px) {
 
   form{
@@ -34,5 +43,6 @@ td{
     align-items: center;
     justify-content: space-around;
   }
-  
+
+
 }
