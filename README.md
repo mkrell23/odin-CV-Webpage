@@ -5,7 +5,7 @@ The user will be able to enter and edit in details from their career and educati
 ## To-Do:
 * Finish creating sections template
     * ~~Contact~~
-    * Education
+    * ~~ Education ~~
     * Work History
 * ~~Add ability to edit entries~~
 * General CSS Styling needed
