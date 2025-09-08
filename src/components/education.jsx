@@ -19,7 +19,6 @@ export default function Education(){
         setEducation([ ...education, newEducation])
     }
 
-
     //TODO: refactor into own component?
     function displayEducation(){
         return education.map( (entry, i) => {
@@ -36,14 +35,16 @@ export default function Education(){
     }
 
     function editForm(e){
+        const newEducation = { school, degree, startDate, endDate }
+        console.log(degree)
         const currentEducationNumber = e.target.parentElement.parentElement.attributes.entry.value
         const currentEducation = education[currentEducationNumber]
-        // console.log(e.target.parentElement.parentElement.attributes.entry.value)
-        setEducation(education.filter( (contact, i) => {
+        const currentEducationRemoved = education.filter( (contact, i) => {
             if (i != currentEducationNumber){
                 return contact
             }
-        }))
+        })
+        newEducation.degree == "" ? setEducation([...currentEducationRemoved]) : setEducation([...currentEducationRemoved, newEducation])
         setSchool(currentEducation.school)
         setStartDate(currentEducation.startDate)
         setEndDate(currentEducation.endDate)
