@@ -6,6 +6,7 @@ export default function Education(){
     const [ startDate, setStartDate ] = useState('')
     const [ endDate, setEndDate ] = useState('')
     const [ degree, setDegree ] = useState('')
+    const [ education, setEducation ] = useState([])
 
     function onSubmit(e){
         e.preventDefault(); 
@@ -14,12 +15,28 @@ export default function Education(){
         setStartDate('')
         setEndDate('')
         setDegree('')
+        const newEducation = { school, degree, startDate, endDate }
+        setEducation([ ...education, newEducation])
     }
 
-//value="2008-12-21"
 
-// TO-DO: Add variable to hold education history
-// TO-DO: Display education history
+    //TODO: refactor into own component?
+    function displayEducation(){
+        return education.map( (entry, i) => {
+            return ( 
+                <tr key={i} entry={i}>
+                    <td>{entry.degree}</td>
+                    <td>{entry.school}</td>
+                    <td>{entry.startDate}</td>
+                    <td>{entry.endDate}</td>
+                    <td> <button level={i} >Edit</button> </td>
+                    {/* onClick={editForm} */}
+                </tr>
+                    )
+        })
+    }
+
+    const educationHistory = displayEducation()
 
     return(
         <>
@@ -55,6 +72,23 @@ export default function Education(){
             </label>{' '}
             <button>Save</button>
         </form>
+        <div>
+            <table>
+                <thead>
+                    <tr> 
+                        { education.length > 0 && <th scope="col">Degree or Certificate</th> }
+                        { education.length > 0 && <th scope="col">School or Body</th>  }
+                        { education.length > 0 && <th scope="col">Start Date</th> } 
+                        { education.length > 0 && <th scope="col">End Date</th> } 
+                    </tr>
+                </thead>
+                <tbody>
+                    {educationHistory}
+                </tbody>
+            </table>
+           
+        </div>
         </>
     )
 }
+
