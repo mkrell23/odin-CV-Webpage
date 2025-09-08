@@ -3,8 +3,7 @@ import { useState } from "react";
 export default function Education(){
 
     const [ school, setSchool ] = useState('')
-    const [ startDate, setStartDate ] = useState('')
-    const [ endDate, setEndDate ] = useState('')
+    const [ recievedDate, setRecievedDate ] = useState('')
     const [ degree, setDegree ] = useState('')
     const [ education, setEducation ] = useState([])
 
@@ -12,10 +11,9 @@ export default function Education(){
         e.preventDefault(); 
         e.stopPropagation(); 
         setSchool('')
-        setStartDate('')
-        setEndDate('')
+        setRecievedDate('')
         setDegree('')
-        const newEducation = { school, degree, startDate, endDate }
+        const newEducation = { school, degree, recievedDate }
         setEducation([ ...education, newEducation])
     }
 
@@ -26,8 +24,7 @@ export default function Education(){
                 <tr key={i} entry={i}>
                     <td>{entry.degree}</td>
                     <td>{entry.school}</td>
-                    <td>{entry.startDate}</td>
-                    <td>{entry.endDate}</td>
+                    <td>{entry.recievedDate}</td>
                     <td> <button level={i} onClick={editForm}>Edit</button> </td>  
                 </tr>
                     )
@@ -35,8 +32,7 @@ export default function Education(){
     }
 
     function editForm(e){
-        const newEducation = { school, degree, startDate, endDate }
-        console.log(degree)
+        const newEducation = { school, degree, recievedDate }
         const currentEducationNumber = e.target.parentElement.parentElement.attributes.entry.value
         const currentEducation = education[currentEducationNumber]
         const currentEducationRemoved = education.filter( (contact, i) => {
@@ -46,8 +42,7 @@ export default function Education(){
         })
         newEducation.degree == "" ? setEducation([...currentEducationRemoved]) : setEducation([...currentEducationRemoved, newEducation])
         setSchool(currentEducation.school)
-        setStartDate(currentEducation.startDate)
-        setEndDate(currentEducation.endDate)
+        setRecievedDate(currentEducation.recievedDate)
         setDegree(currentEducation.degree)
     }
 
@@ -65,17 +60,10 @@ export default function Education(){
                 />
             </label>{' '}
             <label>
-                Date Started: {' '}
-                <input type="date" name="startDate"
-                    value={startDate}
-                    onChange={ e => setStartDate(e.target.value)}
-                />
-            </label>{' '}
-            <label>
-                Date Ended: {' '}
-                <input type="date" name="endDate" 
-                    value={endDate}
-                    onChange={ e => setEndDate(e.target.value)}
+                Date Received: {' '}
+                <input type="date" name="recievedDate"
+                    value={recievedDate}
+                    onChange={ e => setRecievedDate(e.target.value)}
                 />
             </label>{' '}
             <label>
@@ -93,8 +81,7 @@ export default function Education(){
                     <tr> 
                         { education.length > 0 && <th scope="col">Degree or Certificate</th> }
                         { education.length > 0 && <th scope="col">School or Body</th>  }
-                        { education.length > 0 && <th scope="col">Start Date</th> } 
-                        { education.length > 0 && <th scope="col">End Date</th> } 
+                        { education.length > 0 && <th scope="col">Date Received</th> }
                     </tr>
                 </thead>
                 <tbody>
