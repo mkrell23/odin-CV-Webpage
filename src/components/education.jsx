@@ -68,7 +68,7 @@ export default function Education(){
             </label>{' '}
             <label>
                 Date Received: {' '}
-                <input type="date" name="recievedDate"
+                <input type="month" name="recievedDate"
                     value={recievedDate}
                     onChange={ e => setRecievedDate(e.target.value)}
                 />
