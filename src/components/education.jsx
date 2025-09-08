@@ -29,11 +29,25 @@ export default function Education(){
                     <td>{entry.school}</td>
                     <td>{entry.startDate}</td>
                     <td>{entry.endDate}</td>
-                    <td> <button level={i} >Edit</button> </td>
-                    {/* onClick={editForm} */}
+                    <td> <button level={i} onClick={editForm}>Edit</button> </td>  
                 </tr>
                     )
         })
+    }
+
+    function editForm(e){
+        const currentEducationNumber = e.target.parentElement.parentElement.attributes.entry.value
+        const currentEducation = education[currentEducationNumber]
+        // console.log(e.target.parentElement.parentElement.attributes.entry.value)
+        setEducation(education.filter( (contact, i) => {
+            if (i != currentEducationNumber){
+                return contact
+            }
+        }))
+        setSchool(currentEducation.school)
+        setStartDate(currentEducation.startDate)
+        setEndDate(currentEducation.endDate)
+        setDegree(currentEducation.degree)
     }
 
     const educationHistory = displayEducation()
