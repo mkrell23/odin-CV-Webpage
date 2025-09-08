@@ -9,13 +9,13 @@ export default function Contact(){
     // Idea: transform input field to table and vice/versa on save/edit
 
     function editForm(e){
-        const currentContact = e.target.parentElement.parentElement.attributes.contact.value
+        const newCurrentContact = e.target.parentElement.parentElement.attributes.contact.value
         setContacts(contacts.filter( (contact, i) => {
-            if (i != currentContact){
+            if (i != newCurrentContact){
                 return contact
             }
         }))
-        setCurrentContact(contacts[currentContact])
+        setCurrentContact(contacts[newCurrentContact])
     }
 
     function displayContacts(){
