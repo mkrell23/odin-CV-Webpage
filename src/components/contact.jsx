@@ -30,19 +30,21 @@ export default function Contact(){
 
         return (
             <>
-            <h3>Contact Details</h3>
-            <table>
-                <thead>
-                    <tr> 
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {contactsTable}
-                </tbody>
-            </table>
+            <div className='flexDisplay'>
+                <h4 className='formTitle'>Contact Details</h4>
+                <table>
+                    <thead>
+                        <tr> 
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {contactsTable}
+                    </tbody>
+                </table>
+            </div>
             </>
         )
 
